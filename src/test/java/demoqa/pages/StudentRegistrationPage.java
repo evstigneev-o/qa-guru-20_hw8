@@ -36,11 +36,15 @@ public class StudentRegistrationPage {
             modalDialog = $(".modal-dialog"),
             modalDialogText = $("#example-modal-sizes-title-lg");
 
+    public void closeBanners() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+    }
+
     public StudentRegistrationPage openPage() {
         open("/automation-practice-form");
         practiceFormWrapper.shouldHave(text(pageHeader));
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+        closeBanners();
         return this;
     }
 

@@ -20,11 +20,14 @@ public class TextBoxPage {
             outputCurrentAddress = outputForm.$("#currentAddress"),
             outputPermanentAddress = outputForm.$("#permanentAddress");
 
+    public void closeBanners() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+    }
 
     public TextBoxPage openPage() {
         open("/text-box");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+        closeBanners();
         return this;
     }
 
