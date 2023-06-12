@@ -1,14 +1,15 @@
 package demoqa.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.github.javafaker.Faker;
 import demoqa.pages.StudentRegistrationPage;
-import demoqa.pages.TextBoxPage;
 import org.junit.jupiter.api.BeforeAll;
 
 public class BaseTest {
 
     StudentRegistrationPage studentRegistrationPage = new StudentRegistrationPage();
-    TextBoxPage textBoxPage = new TextBoxPage();
+
+    Faker faker = new Faker();
 
     @BeforeAll
     static void setUp() {

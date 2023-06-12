@@ -3,22 +3,25 @@ package demoqa.tests;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.time.LocalDateTime;
+
+import static demoqa.utils.RandomGenerator.*;
 
 public class StudentRegistrationFormTest extends BaseTest {
     File studentImage = new File("src/test/resources/penny.jpeg");
-    String firstName = "Test";
-    String lastName = "Testov";
-    String email = "test@testov.com";
-    String gender = "Male";
-    String dayOfBirth = "17";
-    String monthOfBirth = "July";
-    String yearOfBirth = "1995";
-    String mobile = "8005553535";
-    String subjects = "Computer Science";
-    String hobby = "Sports";
-    String currentAddress = "Moscow, 16 Pushkina street";
-    String state = "NCR";
-    String city = "Delhi";
+    String firstName = faker.name().firstName();
+    String lastName = faker.name().lastName();
+    String email = faker.internet().emailAddress();
+    String gender = getRandomGender();
+    String dayOfBirth = String.format("%02d",faker.number().numberBetween(1,30));
+    String monthOfBirth = getRandomMonth();
+    String yearOfBirth = String.valueOf(faker.number().numberBetween(1900, LocalDateTime.now().getYear()));
+    String mobile = faker.phoneNumber().subscriberNumber(10);
+    String subjects = getRandomSubject();
+    String hobby = getRandomHobbies();
+    String currentAddress = faker.address().fullAddress();
+    String state = getRandomState();
+    String city = getRandomCity(state);
 
     @Test
     public void checkStudentRegistrationForm() {
