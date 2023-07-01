@@ -3,6 +3,7 @@ package demoqa.tests;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -28,6 +29,7 @@ public class StudentRegistrationFormTest extends BaseTest {
     String city = getRandomCity(state);
 
     @Test
+    @Tag("property")
     @DisplayName("Проверка формы успешной регистрации")
     public void checkStudentRegistrationForm() {
         SelenideLogger.addListener("allure", new AllureSelenide());
