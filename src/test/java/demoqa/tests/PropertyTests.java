@@ -3,7 +3,7 @@ package demoqa.tests;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class PropertyTests extends BaseTest{
+public class PropertyTests{
     @Test
     @Tag("check")
     void checkProperties(){
