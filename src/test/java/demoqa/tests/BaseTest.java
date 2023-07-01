@@ -20,8 +20,8 @@ public class BaseTest {
 
     @BeforeAll
     static void setUp() {
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        //Configuration.remote = System.getProperty("selenoid");
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = System.getProperty("selenoid");
         Configuration.baseUrl = System.getProperty("baseUrl","https://demoqa.com");
         Configuration.browser = System.getProperty("browser", "opera");
         Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
