@@ -20,11 +20,12 @@ public class BaseTest {
 
     @BeforeAll
     static void setUp() {
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        Configuration.remote = System.getProperty("selenoid");
-        Configuration.baseUrl = System.getProperty("baseUrl");
-        Configuration.browser = System.getProperty("browser");
-        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        //Configuration.remote = System.getProperty("selenoid");
+        Configuration.baseUrl = System.getProperty("baseUrl","https://demoqa.com");
+        Configuration.browser = System.getProperty("browser", "opera");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
+        Configuration.browserSize = System.getProperty("browserSize","1920x1080");
         Configuration.pageLoadStrategy = "eager";
         //Configuration.headless = true;
         DesiredCapabilities capabilities = new DesiredCapabilities();
