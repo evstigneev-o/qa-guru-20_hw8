@@ -35,13 +35,25 @@ public class RandomGenerator {
         String[] UttarPradeshCities = {"Agra", "Lucknow", "Merrut"};
         String[] HaryanaCities = {"Karnal", "Panipat"};
         String[] RajasthanCities = {"Jaipur", "Jaiselmer"};
-        return switch (state) {
-            case "NCR" -> faker.options().option(NCRCities);
-            case "Uttar Pradesh" ->  faker.options().option(UttarPradeshCities);
-            case "Haryana" ->  faker.options().option(HaryanaCities);
-            case "Rajasthan" -> faker.options().option(RajasthanCities);
-            default -> throw new IllegalStateException("Unexpected value: " + state);
-        };
+//        return switch (state) {
+//            case "NCR" -> faker.options().option(NCRCities);
+//            case "Uttar Pradesh" ->  faker.options().option(UttarPradeshCities);
+//            case "Haryana" ->  faker.options().option(HaryanaCities);
+//            case "Rajasthan" -> faker.options().option(RajasthanCities);
+//            default -> throw new IllegalStateException("Unexpected value: " + state);
+//        };
+        switch (state){
+            case "NCR":
+                return faker.options().option(NCRCities);
+            case "Uttar Pradesh":
+                return faker.options().option(UttarPradeshCities);
+            case "Haryana":
+                return faker.options().option(HaryanaCities);
+            case "Rajasthan":
+                return faker.options().option(RajasthanCities);
+            default:
+                throw new IllegalStateException("Unexpected value: " + state);
+        }
     }
 
 }
